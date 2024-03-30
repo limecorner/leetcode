@@ -38,6 +38,27 @@ const removeDuplicateObjects = arr => {
   return uniqueArr
 }
 
+// const removeDuplicateObjects = arr => {
+//   const newArray = arr.map(m => [m.id, m])
+//   // Because the keys of a Map object are unique, 
+//   // creating a Map from the array of array removes the duplicate object by key
+//   const newMap = new Map(newArray)
+//   const iterator = newMap.values()
+//   const unique = [...iterator]
+//   console.log('newArray', newArray)
+//   console.log('newMap', newMap)
+//   console.log('iterator', iterator)
+//   console.log('unique', unique)
+
+//   // const unique = [...new Map(members.map((m) => [m.id, m])).values()];
+
+//   return unique
+// }
+
+const uniqueBy = (arr, prop) => {
+  return [...new Map(arr.map(m => [m[prop], m])).values()]
+}
+
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
@@ -51,4 +72,5 @@ app.listen(3000, () => {
     { id: 4, name: 'Alice' }
   ]
   console.log('members', removeDuplicateObjects(members))
+  console.log('members uniqueBy', uniqueBy(members, 'id'))
 })
