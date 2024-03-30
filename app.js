@@ -30,10 +30,25 @@ const removeDuplicates = arr => {
 //   return uniqueArray
 // }
 
+const removeDuplicateObjects = arr => {
+  const uniqueArr = arr.reduce((accu, curr) => {
+    if (!accu.some(item => item.id === curr.id)) accu.push(curr)
+    return accu
+  }, [])
+  return uniqueArr
+}
+
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
   const arr = [1, 2, 2, 3, 4, 4, 5]
   const arr2 = removeDuplicates(arr)
   console.log('arr2', arr2)
+  const members = [
+    { id: 1, name: 'John' },
+    { id: 2, name: 'Jane' },
+    { id: 1, name: 'Johnny' },
+    { id: 4, name: 'Alice' }
+  ]
+  console.log('members', removeDuplicateObjects(members))
 })
