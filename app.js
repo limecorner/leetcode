@@ -11,6 +11,15 @@ const removeDuplicates = arr => {
   return unique
 }
 
+// const removeDuplicates = arr => {
+//   const set = new Set(arr)
+//   console.log('set', set)
+//   // const uniqueArr = [...set]
+//   const uniqueArr = Array.from(set)
+//   console.log('uniqueArr', uniqueArr)
+//   return uniqueArr
+// }
+
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
