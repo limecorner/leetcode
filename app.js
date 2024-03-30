@@ -20,10 +20,20 @@ const removeDuplicates = arr => {
 //   return uniqueArr
 // }
 
+// const removeDuplicates = arr => {
+//   const uniqueArray = arr.filter((value, index, self) => {
+//     console.log(('value', value))
+//     console.log(('index', index))
+//     console.log(('self', self))
+//     return self.indexOf(value) === index
+//   })
+//   return uniqueArray
+// }
+
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
-  const arr = ['b', 'a', 'c', 'a', 'b', 'b']
+  const arr = [1, 2, 2, 3, 4, 4, 5]
   const arr2 = removeDuplicates(arr)
   console.log('arr2', arr2)
 })
