@@ -30,6 +30,10 @@ const removeDuplicates = arr => {
 //   return uniqueArray
 // }
 
+// const removeDuplicates = arr => {
+//   return [...new Map(arr.map(i => [i, i])).values()]
+// }
+
 const removeDuplicateObjects = arr => {
   const uniqueArr = arr.reduce((accu, curr) => {
     if (!accu.some(item => item.id === curr.id)) accu.push(curr)
@@ -40,7 +44,7 @@ const removeDuplicateObjects = arr => {
 
 // const removeDuplicateObjects = arr => {
 //   const newArray = arr.map(m => [m.id, m])
-//   // Because the keys of a Map object are unique, 
+//   // Because the keys of a Map object are unique,
 //   // creating a Map from the array of array removes the duplicate object by key
 //   const newMap = new Map(newArray)
 //   const iterator = newMap.values()
