@@ -63,6 +63,34 @@ const uniqueBy = (arr, prop) => {
   return [...new Map(arr.map(m => [m[prop], m])).values()]
 }
 
+const arrPlus = (arr1, arr2) => {
+  let a1 = 0
+  let a2 = 0
+  const newArray = []
+
+  for (let i = 0; i < arr1.length; i++) {
+    a1 += arr1[i] * Math.pow(10, arr1.length - 1 - i)
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    a2 += arr2[i] * Math.pow(10, arr2.length - 1 - i)
+  }
+  let sum = a1 + a2
+  console.log('sum', sum)
+
+  const sumLength = String(sum).length
+  console.log('sumLength', sumLength)
+
+  for (let i = 0; i < sumLength; i++) {
+    const num = sum % 10
+    console.log('num', num)
+    newArray.unshift(num)
+    sum -= num
+    sum /= 10
+  }
+
+  return newArray
+}
+
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
@@ -77,4 +105,8 @@ app.listen(3000, () => {
   ]
   console.log('members', removeDuplicateObjects(members))
   console.log('members uniqueBy', uniqueBy(members, 'id'))
+
+  const array1 = [9, 7, 4, 8, 6, 1]
+  const array2 = [1, 2, 9]
+  console.log(arrPlus(array1, array2))
 })
