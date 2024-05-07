@@ -26,6 +26,31 @@ const formSLL = (start, end) => {
     return sll
   }
 }
+function isSmallEnough (value) {
+  return value < 3
+}
+function isEven (value) {
+  return value % 2 === 0
+}
+const sllFilter = (sll, callback) => {
+  let prev = null
+  let curr = sll.head
+  while (curr) {
+    if (callback(curr.val)) {
+      prev = curr
+    } else {
+      if (curr === sll.head) { // head
+        sll.head = sll.head.next
+      } else if (!curr.next) { // tail
+        prev.next = null
+      } else {
+        prev.next = curr.next // 中
+      }
+    }
+    curr = curr.next
+  }
+  return sll
+}
 
 const printSLL = sll => {
   let curr = sll.head
@@ -37,4 +62,4 @@ const printSLL = sll => {
   return arr
 }
 
-module.exports = { simpleSLL, formSLL, printSLL }
+module.exports = { simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven }
