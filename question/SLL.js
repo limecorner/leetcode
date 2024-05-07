@@ -4,12 +4,12 @@ class Node {
     this.next = null
   }
 }
-
 class SLL {
   constructor () {
     this.head = null
   }
 }
+const simpleSLL = { head: { val: 1, next: { val: 2, next: new Node(3) } } }
 
 const formSLL = (start, end) => {
   if (start > end) {
@@ -27,5 +27,14 @@ const formSLL = (start, end) => {
   }
 }
 
-const formedSLL = formSLL(1, 2)
-module.exports = { formedSLL }
+const printSLL = sll => {
+  let curr = sll.head
+  const arr = []
+  while (curr) {
+    arr.push(curr.val)
+    curr = curr.next
+  }
+  return arr
+}
+
+module.exports = { simpleSLL, formSLL, printSLL }

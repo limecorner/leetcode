@@ -8,7 +8,7 @@ const app = express()
 //   removeDuplicateObjects
 // } = require('./question/removeDuplicates')
 const {
-  formedSLL
+  simpleSLL, formSLL, printSLL
 } = require('./question/SLL')
 
 // 設定 port 3000
@@ -18,5 +18,7 @@ app.listen(3000, () => {
   // console.log('removeDuplicates arr', removeDuplicates(arr))
   // console.log('members', members)
   // console.log('removeDuplicateObjects members', removeDuplicateObjects(members))
-  console.log('formedSLL', formedSLL)
+  console.log('simpleSLL array format', printSLL(simpleSLL))
+  console.log('formedSLL', formSLL(2, 7))
+  console.log('formedSLL array format', printSLL(formSLL(2, 7)))
 })
