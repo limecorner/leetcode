@@ -10,6 +10,9 @@ const app = express()
 const {
   simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven
 } = require('./question/SLL')
+const {
+  countDown, sum, faccollectOddValues, collectOddValues, power, productOfArray, fib
+} = require('./question/recursion')
 
 // 設定 port 3000
 app.listen(3000, () => {
