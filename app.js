@@ -13,7 +13,9 @@ const {
 const {
   countDown, sum, faccollectOddValues, collectOddValues, power, productOfArray, fib
 } = require('./question/recursion')
-
+const {
+  checkValidString, checkValidString2, checkValidStringRecursive
+} = require('./question/stack')
 // 設定 port 3000
 app.listen(3000, () => {
   // console.log('App is running on http://localhost:3000')
