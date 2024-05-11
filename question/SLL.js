@@ -75,6 +75,29 @@ const sllForEach = (sll, callback) => {
   }
 }
 
+function ListNode (val, next) {
+  this.val = (val === undefined ? 0 : val)
+  this.next = (next === undefined ? null : next)
+}
+const reverseList = function (head) {
+  if (!head) return []
+  if (!head.next) return head
+  let prev = null
+  let curr = head
+  let nextNode = curr.next
+  while (curr.next) {
+    curr.next = prev
+    prev = curr
+    curr = nextNode
+    nextNode = curr.next
+  }
+  curr.next = prev
+  return curr
+}
+const node1 = new ListNode(5, undefined)
+const node2 = new ListNode(4, node1)
+const node3 = new ListNode(3, node2)
+
 const printSLL = sll => {
   let curr = sll.head
   const arr = []
@@ -85,4 +108,4 @@ const printSLL = sll => {
   return arr
 }
 
-module.exports = { simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply }
+module.exports = { simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply, node3, reverseList }

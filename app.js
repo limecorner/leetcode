@@ -8,7 +8,7 @@ const app = express()
 //   removeDuplicateObjects
 // } = require('./question/removeDuplicates')
 const {
-  simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply
+  simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply, node3, reverseList
 } = require('./question/SLL')
 const {
   countDown, sum, faccollectOddValues, collectOddValues, power, productOfArray, fib
@@ -19,6 +19,7 @@ const {
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
+
   console.log('simpleSLL', simpleSLL)
   console.log('simpleSLL array format', printSLL(simpleSLL))
   console.log('formSLL', formSLL(2, 5))
@@ -26,6 +27,10 @@ app.listen(3000, () => {
   console.log('filter', printSLL(sllFilter(formSLL(3, 15), isEven)))
   console.log('map array format', printSLL(sllMap(formSLL(2, 5), mutiply)))
   sllForEach(formSLL(2, 5), printMutiply)
+  console.log('node3', node3)
+  const result = reverseList(node3)
+  console.log('result', result)
+
   // console.log(checkValidString('acd(e))ef'))
   // console.log(checkValidString('))'))
 
