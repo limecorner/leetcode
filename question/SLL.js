@@ -52,6 +52,29 @@ const sllFilter = (sll, callback) => {
   return sll
 }
 
+function mutiply (x) {
+  return x * 2
+}
+const sllMap = (sll, callback) => {
+  let curr = sll.head
+  while (curr) {
+    curr.val = callback(curr.val)
+    curr = curr.next
+  }
+  return sll
+}
+
+function printMutiply (x) {
+  console.log(x * 2)
+}
+const sllForEach = (sll, callback) => {
+  let curr = sll.head
+  while (curr) {
+    callback(curr.val)
+    curr = curr.next
+  }
+}
+
 const printSLL = sll => {
   let curr = sll.head
   const arr = []
@@ -62,4 +85,4 @@ const printSLL = sll => {
   return arr
 }
 
-module.exports = { simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven }
+module.exports = { simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply }
