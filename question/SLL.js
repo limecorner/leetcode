@@ -80,18 +80,18 @@ function ListNode (val, next) {
   this.next = (next === undefined ? null : next)
 }
 const reverseList = function (head) {
-  if (!head) return []
-  if (!head.next) return head
+  if (!head) return head
+  // if (!head.next) return head
   let prev = null
   let curr = head
   let nextNode = curr.next
-  while (curr.next) {
-    curr.next = prev
+  curr.next = prev
+  while (nextNode) {
     prev = curr
     curr = nextNode
     nextNode = curr.next
+    curr.next = prev
   }
-  curr.next = prev
   return curr
 }
 const node1 = new ListNode(5, undefined)
