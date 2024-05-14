@@ -8,7 +8,7 @@ const app = express()
 //   removeDuplicateObjects
 // } = require('./question/removeDuplicates')
 const {
-  simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply, node3, reverseList
+  formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply, node1, node3, reverseList, reverseListRecursive
 } = require('./question/SLL')
 const {
   countDown, sum, faccollectOddValues, collectOddValues, power, productOfArray, fib
@@ -20,16 +20,19 @@ const {
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
 
-  console.log('simpleSLL', simpleSLL)
-  console.log('simpleSLL array format', printSLL(simpleSLL))
-  console.log('formSLL', formSLL(2, 5))
-  console.log('formSLL array format', printSLL(formSLL(2, 5)))
-  console.log('filter', printSLL(sllFilter(formSLL(3, 15), isEven)))
-  console.log('map array format', printSLL(sllMap(formSLL(2, 5), mutiply)))
-  sllForEach(formSLL(2, 5), printMutiply)
+  console.log('formSLL', formSLL(1, 3))
+  console.log('formSLL array format', printSLL(formSLL(1, 3)))
+  // console.log('filter', printSLL(sllFilter(formSLL(3, 15), isEven)))
+  // console.log('map array format', printSLL(sllMap(formSLL(2, 5), mutiply)))
+  // sllForEach(formSLL(2, 5), printMutiply)
   console.log('node3', node3)
-  const result = reverseList(node3)
-  console.log('result', result)
+  console.log('node1', node1)
+  console.log('filter', (sllFilter(node1, isEven)))
+
+  // const result = reverseList(node1)
+  // console.log('result', result)
+  // const result2 = reverseListRecursive(formSLL(1, 3))
+  // console.log('result2', result2)
 
   // console.log(checkValidString('acd(e))ef'))
   // console.log(checkValidString('))'))

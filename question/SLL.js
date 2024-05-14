@@ -1,29 +1,25 @@
-class Node {
-  constructor (val) {
-    this.val = val
-    this.next = null
-  }
+
+function ListNode (val, next) {
+  this.val = (val === undefined ? 0 : val)
+  this.next = (next === undefined ? null : next)
 }
-class SLL {
-  constructor () {
-    this.head = null
-  }
-}
-const simpleSLL = { head: { val: 1, next: { val: 2, next: new Node(3) } } }
+
+const node3 = new ListNode(3)
+const node2 = new ListNode(2, new ListNode(3))
+const node1 = new ListNode(1, node2)
 
 const formSLL = (start, end) => {
   if (start > end) {
     return null
   } else {
-    const sll = new SLL()
-    sll.head = new Node(start)
-    let curr = sll.head
+    const head = new ListNode(start)
+    let curr = head
     while (start < end) {
       start++
-      curr.next = new Node(start)
+      curr.next = new ListNode(start)
       curr = curr.next
     }
-    return sll
+    return head
   }
 }
 function isSmallEnough (value) {
@@ -32,15 +28,24 @@ function isSmallEnough (value) {
 function isEven (value) {
   return value % 2 === 0
 }
-const sllFilter = (sll, callback) => {
+
+// null       2     ->           4
+//       3       3     4
+// pr                         cu
+//                    head
+//                    pr
+// 1
+//
+
+const sllFilter = (head, callback) => {
   let prev = null
-  let curr = sll.head
+  let curr = head
   while (curr) {
     if (callback(curr.val)) {
       prev = curr
     } else {
-      if (curr === sll.head) { // head
-        sll.head = sll.head.next
+      if (curr === head) { // head
+        head = head.next
       } else if (!curr.next) { // tail
         prev.next = null
       } else {
@@ -49,7 +54,7 @@ const sllFilter = (sll, callback) => {
     }
     curr = curr.next
   }
-  return sll
+  return head
 }
 
 function mutiply (x) {
@@ -75,10 +80,6 @@ const sllForEach = (sll, callback) => {
   }
 }
 
-function ListNode (val, next) {
-  this.val = (val === undefined ? 0 : val)
-  this.next = (next === undefined ? null : next)
-}
 const reverseList = function (head) {
   if (!head) return head
   // if (!head.next) return head
@@ -94,12 +95,24 @@ const reverseList = function (head) {
   }
   return curr
 }
-const node1 = new ListNode(5, undefined)
-const node2 = new ListNode(4, node1)
-const node3 = new ListNode(3, node2)
 
-const printSLL = sll => {
-  let curr = sll.head
+//
+// 1 ->  2  -> 3
+// val
+// next
+
+const reverseListRecursive = function (head) {
+  if (!head || !head.next) return head
+  // if (!head.next) return head
+  const newHead = reverseList(head.next)
+  const nextNode = head.next
+  nextNode.next = head
+  head.next = null
+  return newHead
+}
+
+const printSLL = head => {
+  let curr = head
   const arr = []
   while (curr) {
     arr.push(curr.val)
@@ -108,4 +121,4 @@ const printSLL = sll => {
   return arr
 }
 
-module.exports = { simpleSLL, formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply, node3, reverseList }
+module.exports = { formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply, node1, node3, reverseList, reverseListRecursive }

@@ -18,6 +18,7 @@ function fac (num) {
   return num * fac(num - 1)
 }
 
+// [1,2,3,4]=>[1,3]
 function collectOddValues (arr) {
   const result = []
 
