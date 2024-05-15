@@ -16,18 +16,24 @@ const {
 const {
   checkValidString, checkValidString2, checkValidStringRecursive
 } = require('./question/stack')
+const {
+  unorderArray, unorderArray2, bubble1, bubble2, bubbleOptimize, selection
+} = require('./question/array')
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
+  console.log('unorderArray', unorderArray)
+  selection(unorderArray)
+  console.log('selection', unorderArray)
 
-  console.log('formSLL', formSLL(1, 3))
-  console.log('formSLL array format', printSLL(formSLL(1, 3)))
+  // console.log('formSLL', formSLL(1, 3))
+  // console.log('formSLL array format', printSLL(formSLL(1, 3)))
   // console.log('filter', printSLL(sllFilter(formSLL(3, 15), isEven)))
   // console.log('map array format', printSLL(sllMap(formSLL(2, 5), mutiply)))
   // sllForEach(formSLL(2, 5), printMutiply)
-  console.log('node3', node3)
-  console.log('node1', node1)
-  console.log('filter', (sllFilter(node1, isEven)))
+  // console.log('node3', node3)
+  // console.log('node1', node1)
+  // console.log('filter', (sllFilter(node1, isEven)))
 
   // const result = reverseList(node1)
   // console.log('result', result)
