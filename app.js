@@ -17,14 +17,14 @@ const {
   checkValidString, checkValidString2, checkValidStringRecursive
 } = require('./question/stack')
 const {
-  unorderArray, unorderArray2, bubble1, bubble2, bubbleOptimize, selection
+  unorderArray, unorderArray2, bubble1, bubble2, bubbleOptimize, selection, insertion
 } = require('./question/array')
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
   console.log('unorderArray', unorderArray)
-  selection(unorderArray)
-  console.log('selection', unorderArray)
+  insertion(unorderArray)
+  console.log('insertion', unorderArray)
 
   // console.log('formSLL', formSLL(1, 3))
   // console.log('formSLL array format', printSLL(formSLL(1, 3)))

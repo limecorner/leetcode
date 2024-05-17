@@ -1,4 +1,7 @@
-const unorderArray = [5, 3, 4, 1, 2]
+const unorderArray = [2, 1, 9, 76, 4]
+// [8, 6, 10]
+// [2, 1, 9, 76, 4]
+// [5, 3, 4, 1, 2]
 // const unorderArray = [5, 1, 2, 3, 4]
 const unorderArray2 = [5, 1, 2, 3, 4]
 
@@ -46,5 +49,15 @@ const selection = arr => {
     [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
   }
 }
+const insertion = arr => {
+  for (let i = 1; i < arr.length; i++) {
+    const currVal = arr[i]
+    let j = i - 1
+    for (j; j >= 0 && arr[j] > currVal; j--) {
+      arr[j + 1] = arr[j]
+    }
+    arr[j + 1] = currVal
+  }
+}
 
-module.exports = { unorderArray, unorderArray2, bubble1, bubble2, bubbleOptimize, selection }
+module.exports = { unorderArray, unorderArray2, bubble1, bubble2, bubbleOptimize, selection, insertion }
