@@ -89,42 +89,12 @@ const uniqueBy = (arr, prop) => {
 //   return newArray
 // }
 
-const arrPlus = (arr1, arr2) => {
-  // arr1 = [8, 6, 1]
-  // arr2 = [9]
-  const result = []
-  let i = arr1.length - 1 // Starting from the least significant digit
-  let j = arr2.length - 1
-
-  let carry = 0
-  // 運算到較長的陣列跑到 index 為 0
-  while (i >= 0 || j >= 0) {
-    // arr2[j] 不存在時，就 0
-    const sum = (arr1[i] || 0) + (arr2[j] || 0) + carry
-    carry = sum >= 10 ? 1 : 0
-    result.unshift(sum % 10)
-    console.log('result', result)
-    i--
-    j--
-  }
-  if (carry === 1) result.unshift(1)
-  return result
-}
-
-const arr2 = removeDuplicates(arr)
-console.log('arr2', arr2)
 const members = [
   { id: 1, name: 'John' },
   { id: 2, name: 'Jane' },
   { id: 1, name: 'Johnny' },
   { id: 4, name: 'Alice' }
 ]
-console.log('members', removeDuplicateObjects(members))
-console.log('members uniqueBy', uniqueBy(members, 'id'))
-
-const array1 = [8, 6, 1]
-const array2 = [9]
-console.log(arrPlus(array1, array2))
 
 module.exports = {
   arr,
