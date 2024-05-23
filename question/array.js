@@ -50,7 +50,9 @@ const selection = arr => {
   }
 }
 const insertion = arr => {
+  // let currVal;
   for (let i = 1; i < arr.length; i++) {
+    // currVal = arr[i]
     const currVal = arr[i]
     let j = i - 1
     for (j; j >= 0 && arr[j] > currVal; j--) {
