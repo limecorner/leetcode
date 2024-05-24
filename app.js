@@ -19,12 +19,27 @@ const {
 const {
   unorderArray, unorderArray2, bubble1, bubble2, bubbleOptimize, selection, insertion
 } = require('./question/array')
+
+const {
+  arr, members, array1, array2, plusArr
+} = require('./question/test')
+const {
+  frequencyCounter1, res, isAnagram, uniqueValues
+} = require('./question/patterns')
+const {
+  i, subStringCount
+} = require('./question/search')
+
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
-  console.log('unorderArray', unorderArray)
-  insertion(unorderArray)
-  console.log('insertion', unorderArray)
+
+  console.log('subStringCount', subStringCount)
+
+  // console.log('plusArr', plusArr(array1, array2))
+  // console.log('unorderArray', unorderArray)
+  // insertion(unorderArray)
+  // console.log('insertion', unorderArray)
 
   // console.log('formSLL', formSLL(1, 3))
   // console.log('formSLL array format', printSLL(formSLL(1, 3)))
