@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
 
-// const {
-//   arr,
-//   removeDuplicates,
-//   members,
-//   removeDuplicateObjects
-// } = require('./question/removeDuplicates')
+const {
+  // arr,
+  removeDuplicates,
+  // members,
+  removeDuplicateObjects
+} = require('./question/removeDuplicates')
 const {
   formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply, node1, node3, reverseList, reverseListRecursive
 } = require('./question/SLL')
@@ -34,7 +34,7 @@ const {
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
 
-  console.log('subStringCount', subStringCount)
+  console.log('res', res)
 
   // console.log('plusArr', plusArr(array1, array2))
   // console.log('unorderArray', unorderArray)
