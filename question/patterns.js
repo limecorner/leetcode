@@ -193,6 +193,94 @@ function areThereDuplicates (...args) {
   }
   return false
 }
+// res = areThereDuplicates(1, 2, 5, 3, 8, 3, 5)
 
-res = areThereDuplicates(1, 2, 5, 3, 8, 3, 5)
+function averagePair (arr, target) {
+  const realTarget = target * 2
+  let l = 0
+  let r = arr.length - 1
+  while (l < r) {
+    const sum = arr[l] + arr[r]
+    if (sum === realTarget) {
+      return true
+    } else if (sum < realTarget) {
+      l++
+    } else {
+      r--
+    }
+  }
+  return false
+}
+// res = averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)
+
+// s1 shorter string
+// function isSubsequence (s1, s2) {
+//   if (s1.length > s2.length) return false
+//   let i = 0
+//   let j = 0
+//   while (j < s2.length) {
+//     if (s1[i] === s2[j]) {
+//       i++
+//     }
+//     if (i === s1.length) return true
+//     j++
+//   }
+//   return false
+// }
+// function isSubsequence (s1, s2) {
+//   if (s1.length > s2.length) return false
+//   let i = 0
+//   let j = 0
+//   while (j < s2.length) {
+//     if (s1[i] === s2[j]) {
+//       i++
+//     }
+//     if (i === s1.length) return true
+//     j++
+//   }
+//   return false
+// }
+// 第一次解，沒寫到 return
+// function isSubsequence (s1, s2) {
+//   if (s1.length > s2.length) return false
+//   if (s1.length === 1 && s1[0] === s2[0]) return true
+//   if (s2.length === 1) return false
+//   if (s1[0] === s2[0]) {
+//     isSubsequence(s1.substring(1), s2.substring(1))
+//   } else {
+//     isSubsequence(s1, s2.substring(1))
+//   }
+// }
+function isSubsequence (str1, str2) {
+  if (str1.length === 0) return true
+  if (str2.length === 0) return false
+  if (str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1))
+  return isSubsequence(str1, str2.slice(1))
+}
+res = isSubsequence('abc', 'abracadabra')
+
+const minSubArrayLen = function (target, nums) {
+  let l = 0
+  let r = 0
+  let sum = nums[l]
+  let minSize = 10 ** 5
+  while (r < nums.length) {
+    if (sum >= target) {
+      const tempSize = r - l + 1
+      if (tempSize < minSize) minSize = tempSize
+      sum -= nums[l]
+      l++
+    } else {
+      r++
+      sum += (nums[r] || 0)
+    }
+  }
+  minSize = minSize === 10 ** 5 ? 0 : minSize
+  return minSize
+}
+
+const lengthOfLongestSubstring = function (s) {
+
+}
+
 module.exports = { frequencyCounter1, res, isAnagram, uniqueValues }
