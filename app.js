@@ -21,7 +21,7 @@ const {
 } = require('./question/array')
 
 const {
-  arr, members, array1, array2, plusArr
+  // arr, members, array1, array2, plusArr
 } = require('./question/test')
 const {
   frequencyCounter1, res, isAnagram, uniqueValues
@@ -29,12 +29,19 @@ const {
 const {
   i, subStringCount
 } = require('./question/search')
+const {
+  arr
+} = require('./question/sort_intermediate')
+const {
+  ht
+} = require('./question/hashTable')
 
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
 
-  console.log('res', res)
+  console.log('ht', ht)
+  console.log('ht', ht.values())
 
   // console.log('plusArr', plusArr(array1, array2))
   // console.log('unorderArray', unorderArray)
