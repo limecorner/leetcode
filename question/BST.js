@@ -1,0 +1,53 @@
+function Node (val, left, right) {
+  this.val = (val === undefined ? 0 : val)
+  this.left = (left === undefined ? null : left)
+  this.right = (right === undefined ? null : right)
+}
+
+// recursive
+function insert (root, val) {
+  if (!root) {
+    // 沒有 this
+    // this.root = new Node(val)
+    return new Node(val)
+  }
+  if (val < root.val) {
+    root.left = insert(root.left, val)
+  } else if (root.val < val) {
+    root.right = insert(root.right, val)
+  }
+  // return root
+}
+
+// iterative v2
+// function find (root, val) {
+//   while (root) {
+//     if (root.val === val) return root
+//     else if (root.val > val) {
+//       root = root.left
+//     } else if (root.val < val) {
+//       root = root.right
+//     }
+//   }
+//   return null
+// }
+
+// recursive
+function find (root, val) {
+  if (!root) return null
+  if (root.val === val) { return root }
+  if (root.val > val) {
+    return find(root.left, val)
+  } else {
+    return find(root.right, val)
+  }
+};
+
+const node = insert(null, 10)
+insert(node, 5)
+insert(node, 15)
+const result = find(node, 17)
+
+module.exports = {
+  node, result
+}
