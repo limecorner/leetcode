@@ -16,7 +16,8 @@ function insert (root, val) {
   } else if (root.val < val) {
     root.right = insert(root.right, val)
   }
-  // return root
+  // must have!!!
+  return root
 }
 
 // iterative v2
@@ -43,10 +44,27 @@ function find (root, val) {
   }
 };
 
+function bfs (root) {
+  const q = [root]
+  const visited = []
+  // while (q.length) {
+  while (q[0]) {
+    const node = q.shift()
+    visited.push(node)
+    if (node.left) q.push(node.left)
+    if (node.right) q.push(node.right)
+  }
+  return visited
+}
+
 const node = insert(null, 10)
-insert(node, 5)
+insert(node, 6)
 insert(node, 15)
-const result = find(node, 17)
+insert(node, 3)
+insert(node, 8)
+insert(node, 20)
+
+const result = bfs(node)
 
 module.exports = {
   node, result
