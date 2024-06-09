@@ -57,6 +57,46 @@ function bfs (root) {
   return visited
 }
 
+function DFSPreOrder (root) {
+  const visited = []
+  function traverse (node) {
+    visited.push(node.val)
+    if (node.left) traverse(node.left)
+    if (node.right) traverse(node.right)
+  }
+  traverse(root)
+  return visited
+}
+
+function DFSPostOrder (root) {
+  const visited = []
+  function traverse (node) {
+    if (node.left) traverse(node.left)
+    if (node.right) traverse(node.right)
+    visited.push(node.val)
+  }
+  traverse(root)
+  return visited
+}
+
+function DFSInOrder (root) {
+  const visited = []
+  function traverse (node) {
+    if (node.left) traverse(node.left)
+    visited.push(node.val)
+    if (node.right) traverse(node.right)
+  }
+  traverse(root)
+  return visited
+}
+
+// DFSPreOrder
+// 一跑就放
+// [10, 6, 3, 8, 15, 20]
+
+// DFSPostOrder
+// 跑完才放
+// [3, 8, 6, 20, 15, 10]
 const node = insert(null, 10)
 insert(node, 6)
 insert(node, 15)
@@ -64,7 +104,7 @@ insert(node, 3)
 insert(node, 8)
 insert(node, 20)
 
-const result = bfs(node)
+const result = DFSInOrder(node)
 
 module.exports = {
   node, result
