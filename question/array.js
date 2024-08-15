@@ -38,6 +38,9 @@ const bubbleOptimize = arr => {
     if (noSwaps) break
   }
 }
+const swap = (arr, idx1, idx2) =>
+  ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]])
+
 const selection = arr => {
   for (let i = 0; i < arr.length - 1; i++) {
     // let min = arr[i]
@@ -48,10 +51,10 @@ const selection = arr => {
         minIndex = j
       }
     }
-    console.log(i, minIndex);
-    //
-    [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
+    // [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
+    swap(arr, i, minIndex)
   }
+  return arr
 }
 const insertion = arr => {
   // let currVal;
