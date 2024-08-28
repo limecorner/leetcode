@@ -1,3 +1,4 @@
+// https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
 // Stack
 function Node (val, next) {
   this.val = val
