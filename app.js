@@ -38,6 +38,8 @@ const {
 const { keyWithMaxValue } = require('./question/obj1')
 const { MajorityElement } = require('./question/HT1')
 const { startStack } = require('./test/stackUsingSLL')
+const { startStack2 } = require('./test/stackUsingArray')
+const { startQueue } = require('./test/queueUsingSLL')
 
 // 設定 port 3000
 app.listen(3000, () => {

@@ -45,21 +45,24 @@ class Stack {
 }
 
 function startStack () {
-  const stack = new Stack()
-  console.log(stack.isEmpty())
+  const st = new Stack()
 
-  console.log(stack.peek())
-  stack.push(1)
-  stack.push(2)
-  stack.push(3)
-  console.log(stack.peek())
-  console.log(stack)
-  const top = stack.pop()
-  console.log('top', top)
-  console.log(stack)
-  // top = stack.pop()
-  // console.log('top', top)
-  // console.log(stack)
+  // Push elements onto the stack
+  st.push(11)
+  st.push(22)
+  st.push(33)
+  st.push(44)
+
+  // Print top element of the stack
+  console.log('Top element is ' + st.peek())
+
+  // removing two elemements from the top
+  console.log('Removing two elements...')
+  st.pop()
+  st.pop()
+
+  // Print top element of the stack
+  console.log('Top element is ' + st.peek())
 }
 
 module.exports = { startStack }
