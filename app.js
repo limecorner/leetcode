@@ -21,51 +21,23 @@ const {
   unorderArray, unorderArray2, bubble1, bubble2, bubbleOptimize, selection, insertion
 } = require('./question/array')
 
-const {
-  arr, members, array1, array2, plusArr
-} = require('./question/test')
-const {
-  frequencyCounter1, res, isAnagram, uniqueValues
-} = require('./question/patterns')
-const {
-  i, subStringCount
-} = require('./question/search')
-const {
-  // arr
-} = require('./question/sort_intermediate')
-const {
-  // ht
-} = require('./question/hashTable')
-const {
-  // q1, s1
-} = require('./question/stack2')
-const {
-  // s
-} = require('./question/StackusingQueues')
-// const {
-//   node1, node2, node3
-// } = require('./question/FlattenNestedList')
-const {
-  sll
-} = require('./question/SLLRec')
-const {
-  // node,result
-} = require('./question/BST')
-const {
-  bst1, resMode
-} = require('./question/BST2')
+const { arr, members, array1, array2, plusArr } = require('./question/test')
+const { frequencyCounter1, res, isAnagram, uniqueValues } = require('./question/patterns')
+const { i, subStringCount } = require('./question/search')
+// const { arr} = require('./question/sort_intermediate')
+const { ht } = require('./question/hashTable')
+const { q1, s1 } = require('./question/stack2')
+const { s } = require('./question/StackusingQueues')
+//  const {   node1, node2, node3} = require('./question/FlattenNestedList')
+const { sll } = require('./question/SLLRec')
+const { node, result } = require('./question/BST')
+const { bst1, resMode } = require('./question/BST2')
 const {
   // resStr
 } = require('./question/string1')
-const {
-  keyWithMaxValue
-} = require('./question/obj1')
-const {
-  MajorityElement
-} = require('./question/HT1')
-const {
-  startStack
-} = require('./test/stackUsingSLL')
+const { keyWithMaxValue } = require('./question/obj1')
+const { MajorityElement } = require('./question/HT1')
+const { startStack } = require('./test/stackUsingSLL')
 
 // 設定 port 3000
 app.listen(3000, () => {
