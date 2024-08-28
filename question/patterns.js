@@ -178,12 +178,14 @@ res = sameFrequency(1423, 2314)
 // }
 
 function areThereDuplicates (...args) {
+  // console.log('args', args)
+
   args.sort((a, b) => {
     if (a < b) return -1
     if (a > b) return 1
     return 0
   })
-  console.log('args', args)
+  // console.log('args', args)
   let l = 0
   let r = 1
   while (r < args.length) {
@@ -193,7 +195,7 @@ function areThereDuplicates (...args) {
   }
   return false
 }
-// res = areThereDuplicates(1, 2, 5, 3, 8, 3, 5)
+res = areThereDuplicates(1, 2, 5, 3, 8, 3, 5)
 
 function averagePair (arr, target) {
   const realTarget = target * 2

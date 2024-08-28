@@ -5,10 +5,11 @@ const {
   // arr,
   removeDuplicates,
   // members,
-  removeDuplicateObjects
+  removeDuplicateObjects,
+  uniqueBy
 } = require('./question/removeDuplicates')
 const {
-  formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply, node1, node3, reverseList, reverseListRecursive
+  // formSLL, printSLL, sllFilter, isSmallEnough, isEven, sllMap, mutiply, sllForEach, printMutiply, node1, node3, reverseList, reverseListRecursive
 } = require('./question/SLL')
 const {
   countDown, sum, faccollectOddValues, collectOddValues, power, productOfArray, fib
@@ -21,7 +22,7 @@ const {
 } = require('./question/array')
 
 const {
-  // arr, members, array1, array2, plusArr
+  arr, members, array1, array2, plusArr
 } = require('./question/test')
 const {
   frequencyCounter1, res, isAnagram, uniqueValues
@@ -30,20 +31,54 @@ const {
   i, subStringCount
 } = require('./question/search')
 const {
-  arr
+  // arr
 } = require('./question/sort_intermediate')
 const {
-  ht
+  // ht
 } = require('./question/hashTable')
+const {
+  // q1, s1
+} = require('./question/stack2')
+const {
+  // s
+} = require('./question/StackusingQueues')
+// const {
+//   node1, node2, node3
+// } = require('./question/FlattenNestedList')
+const {
+  sll
+} = require('./question/SLLRec')
+const {
+  // node,result
+} = require('./question/BST')
+const {
+  bst1, resMode
+} = require('./question/BST2')
+const {
+  // resStr
+} = require('./question/string1')
+const {
+  keyWithMaxValue
+} = require('./question/obj1')
+const {
+  MajorityElement
+} = require('./question/HT1')
+const {
+  startStack
+} = require('./test/stack3')
 
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
+  startStack()
+  console.log('QQQ')
 
-  console.log('ht', ht)
-  console.log('ht', ht.values())
+  // console.log('result', result)
+  // console.log('result', result)
 
-  // console.log('plusArr', plusArr(array1, array2))
+  // console.log('sll', sll.head)
+
+  // console.log('plusArr', plusArr([8, 6, 1], [1, 9, 9]))
   // console.log('unorderArray', unorderArray)
   // insertion(unorderArray)
   // console.log('insertion', unorderArray)
@@ -68,4 +103,5 @@ app.listen(3000, () => {
   // console.log('removeDuplicates arr', removeDuplicates(arr))
   // console.log('members', members)
   // console.log('removeDuplicateObjects members', removeDuplicateObjects(members))
+  // console.log('uniqueBy members', uniqueBy(members, 'id'))
 })

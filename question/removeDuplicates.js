@@ -1,13 +1,15 @@
-const arr = [1, 2, 2, 3, 4, 4, 5]
-const removeDuplicates = arr => {
-  const unique = arr.reduce((accu, curr) => {
-    const isExist = accu.includes(curr)
-    if (!isExist) accu.push(curr)
-    // if(accu.indexOf(curr) < 0) accu.push(curr)
-    return accu
-  }, [])
-  return unique
-}
+const e = require('express')
+
+const arr = [1, 1, 2, 3, 3]
+// const removeDuplicates = arr => {
+//   const unique = arr.reduce((accu, curr) => {
+//     const isExist = accu.includes(curr)
+//     if (!isExist) accu.push(curr)
+//     // if(accu.indexOf(curr) < 0) accu.push(curr)
+//     return accu
+//   }, [])
+//   return unique
+// }
 
 // const removeDuplicates = arr => {
 //   const set = new Set(arr)
@@ -28,34 +30,41 @@ const removeDuplicates = arr => {
 //   return uniqueArray
 // }
 
-// const removeDuplicates = arr => {
-//   return [...new Map(arr.map(i => [i, i])).values()]
-// }
+const removeDuplicates = arr => {
+  const mapRes = arr.map((e, i) => [e, i])
+  console.log(mapRes)
+  const map = new Map(mapRes)
+  console.log('map', map)
+  const keys = map.keys()
+  console.log('keys', keys)
 
-const removeDuplicateObjects = arr => {
-  const uniqueArr = arr.reduce((accu, curr) => {
-    if (!accu.some(item => item.id === curr.id)) accu.push(curr)
-    return accu
-  }, [])
-  return uniqueArr
+  return [...new Map(arr.map(e => [e, e])).keys()]
 }
 
 // const removeDuplicateObjects = arr => {
-//   const newArray = arr.map(m => [m.id, m])
-//   // Because the keys of a Map object are unique,
-//   // creating a Map from the array of array removes the duplicate object by key
-//   const newMap = new Map(newArray)
-//   const iterator = newMap.values()
-//   const unique = [...iterator]
-//   console.log('newArray', newArray)
-//   console.log('newMap', newMap)
-//   console.log('iterator', iterator)
-//   console.log('unique', unique)
-
-//   // const unique = [...new Map(members.map((m) => [m.id, m])).values()];
-
-//   return unique
+//   const uniqueArr = arr.reduce((accu, curr) => {
+//     if (!accu.some(item => item.id === curr.id)) accu.push(curr)
+//     return accu
+//   }, [])
+//   return uniqueArr
 // }
+
+const removeDuplicateObjects = arr => {
+  const newArray = arr.map(m => [m.id, m])
+  // Because the keys of a Map object are unique,
+  // creating a Map from the array of array removes the duplicate object by key
+  const newMap = new Map(newArray)
+  const iterator = newMap.values()
+  const unique = [...iterator]
+  console.log('newArray', newArray)
+  console.log('newMap', newMap)
+  console.log('iterator', iterator)
+  console.log('unique', unique)
+
+  // const unique = [...new Map(members.map((m) => [m.id, m])).values()];
+
+  return unique
+}
 
 const uniqueBy = (arr, prop) => {
   return [...new Map(arr.map(m => [m[prop], m])).values()]
@@ -100,5 +109,6 @@ module.exports = {
   arr,
   removeDuplicates,
   members,
-  removeDuplicateObjects
+  removeDuplicateObjects,
+  uniqueBy
 }

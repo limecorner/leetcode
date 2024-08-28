@@ -23,7 +23,7 @@ const binarySearch = (arr, val) => {
   return -1
 }
 
-const i = binarySearch([1, 3, 4, 6, 8, 9, 11, 12, 15, 16, 17, 18, 19], 18)
+const i = binarySearch([1, 3, 4, 6, 8, 9, 11, 12, 15, 16, 17, 18, 19], 4)
 
 // 先寫出這些
 const naiveStringSearch = (longS, shortS) => {

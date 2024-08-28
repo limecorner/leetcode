@@ -84,7 +84,7 @@ class MyStack {
         cur = this.q2.head
         pushedQ = this.q1
       }
-      console.log('cur1', cur)
+      // console.log('cur1', cur)
 
       pushedQ.enqueue(x)
       while (cur) {
@@ -94,7 +94,7 @@ class MyStack {
       containerQ.head = null
       containerQ.tail = null
       containerQ.size = 0
-      console.log('cur2', cur)
+      // console.log('cur2', cur)
     }
   }
 

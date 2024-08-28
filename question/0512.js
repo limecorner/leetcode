@@ -124,7 +124,7 @@ function skipOdd(node) {
 }
 
 
-console.log(collectOddValues([1,2,3,3]))
+console.log(collectOddValues([1,8,7,6,2,3,3]))
 
 
 

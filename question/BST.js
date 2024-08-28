@@ -57,14 +57,32 @@ function bfs (root) {
   return visited
 }
 
+// function DFSPreOrder (root) {
+//   const visited = []
+//   function traverse (node) {
+//     visited.push(node.val)
+//     if (node.left) traverse(node.left)
+//     if (node.right) traverse(node.right)
+//   }
+//   traverse(root)
+//   return visited
+// }
+
+// recursive
 function DFSPreOrder (root) {
-  const visited = []
-  function traverse (node) {
-    visited.push(node.val)
-    if (node.left) traverse(node.left)
-    if (node.right) traverse(node.right)
+  const visited = [root.val]
+  const stack = [root.right]
+  let cur = root.left
+
+  while (stack.length || cur) {
+    if (!cur) {
+      cur = stack.pop()
+      continue
+    }
+    visited.push(cur.val)
+    stack.push(cur.right)
+    cur = cur.left
   }
-  traverse(root)
   return visited
 }
 
@@ -104,7 +122,7 @@ insert(node, 3)
 insert(node, 8)
 insert(node, 20)
 
-const result = DFSInOrder(node)
+const result = DFSPreOrder(node)
 
 module.exports = {
   node, result
