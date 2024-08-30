@@ -1,15 +1,5 @@
-const e = require('express')
 
 const arr = [1, 1, 2, 3, 3]
-// const removeDuplicates = arr => {
-//   const unique = arr.reduce((accu, curr) => {
-//     const isExist = accu.includes(curr)
-//     if (!isExist) accu.push(curr)
-//     // if(accu.indexOf(curr) < 0) accu.push(curr)
-//     return accu
-//   }, [])
-//   return unique
-// }
 
 // const removeDuplicates = arr => {
 //   const set = new Set(arr)
@@ -18,16 +8,6 @@ const arr = [1, 1, 2, 3, 3]
 //   const uniqueArr = Array.from(set)
 //   console.log('uniqueArr', uniqueArr)
 //   return uniqueArr
-// }
-
-// const removeDuplicates = arr => {
-//   const uniqueArray = arr.filter((value, index, self) => {
-//     console.log(('value', value))
-//     console.log(('index', index))
-//     console.log(('self', self))
-//     return self.indexOf(value) === index
-//   })
-//   return uniqueArray
 // }
 
 const removeDuplicates = arr => {
@@ -40,6 +20,26 @@ const removeDuplicates = arr => {
 
   return [...new Map(arr.map(e => [e, e])).keys()]
 }
+
+// const removeDuplicates = arr => {
+//   const unique = arr.reduce((accu, curr) => {
+//     const isExist = accu.includes(curr)
+//     if (!isExist) accu.push(curr)
+//     // if(accu.indexOf(curr) < 0) accu.push(curr)
+//     return accu
+//   }, [])
+//   return unique
+// }
+
+// const removeDuplicates = arr => {
+//   const uniqueArray = arr.filter((value, index, self) => {
+//     console.log(('value', value))
+//     console.log(('index', index))
+//     console.log(('self', self))
+//     return self.indexOf(value) === index
+//   })
+//   return uniqueArray
+// }
 
 // const removeDuplicateObjects = arr => {
 //   const uniqueArr = arr.reduce((accu, curr) => {
