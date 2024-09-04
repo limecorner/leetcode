@@ -27,6 +27,7 @@ const plusArr = (a1, a2) => {
   for (let i = a1.length - 1; i >= 0; i--) {
     const sum = a1[i] + a2[i] + carry
     res.unshift(sum % 10)
+    // res.push(sum % 10)
     if (sum >= 10) {
       carry = 1
     } else {
@@ -35,6 +36,8 @@ const plusArr = (a1, a2) => {
   }
   if (carry) {
     res.unshift(1)
+    // res.push(1)
+    // res=res.reverse()
   }
   return res
 }
