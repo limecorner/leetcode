@@ -4,6 +4,48 @@ function Node (val, left, right) {
   this.right = (right === undefined ? null : right)
 }
 
+// function insert (root, val) {
+//   const temp = new Node(val)
+//   if (!root) return temp
+//   let cur = root
+//   let par = null
+//   while (cur) {
+//     par = cur
+//     if (val > cur.val) {
+//       cur = cur.right
+//     } else {
+//       cur = cur.left
+//     }
+//   }
+//   if (val > par.val) {
+//     par.right = temp
+//   } else {
+//     par.left = temp
+//   }
+//   return root
+// }
+
+// function insert (root, val) {
+//   const newNode = new Node(val)
+//   if (!root) return newNode
+//   let cur = root
+//   while (cur) {
+//     if (val > cur.val) {
+//       if (!cur.right) {
+//         cur.right = newNode
+//         return root
+//       }
+//       cur = cur.right
+//     } else {
+//       if (!cur.left) {
+//         cur.left = newNode
+//         return root
+//       }
+//       cur = cur.left
+//     }
+//   }
+// }
+
 // recursive
 function insert (root, val) {
   if (!root) {
