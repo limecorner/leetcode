@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 const {
-  // arr,
+  arr,
   removeDuplicates,
   // members,
   removeDuplicateObjects,
@@ -21,7 +21,10 @@ const {
   unorderArray, unorderArray2, bubble1, bubble2, bubbleOptimize, selection, insertion
 } = require('./question/array')
 
-const { arr, members, array1, array2, plusArr } = require('./question/test')
+const {
+  // arr,
+  members, array1, array2, plusArr
+} = require('./question/test')
 const { frequencyCounter1, res, isAnagram, uniqueValues } = require('./question/patterns')
 const { i, subStringCount } = require('./question/search')
 // const { arr} = require('./question/sort_intermediate')
@@ -30,7 +33,7 @@ const { q1, s1 } = require('./question/stack2')
 const { s } = require('./question/StackusingQueues')
 //  const {   node1, node2, node3} = require('./question/FlattenNestedList')
 const { sll } = require('./question/SLLRec')
-const { node, result } = require('./question/BST')
+const { node, result, found } = require('./question/BST')
 const { bst1, resMode } = require('./question/BST2')
 const {
   // resStr
@@ -40,19 +43,20 @@ const { MajorityElement } = require('./question/HT1')
 const { startStack } = require('./test/stackUsingSLL')
 const { startStack2 } = require('./test/stackUsingArray')
 const { startQueue } = require('./test/queueUsingSLL')
+const sort_intermediate = require('./question/sort_intermediate')
 
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
-  startStack()
-  console.log('QQQ')
+  // startQueue()
+  // console.log(removeDuplicates(arr))
 
-  // console.log('result', result)
+  console.log('node', node)
   // console.log('result', result)
 
   // console.log('sll', sll.head)
 
-  // console.log('plusArr', plusArr([8, 6, 1], [1, 9, 9]))
+  // console.log('plusArr', plusArr([1], [7, 9]))
   // console.log('unorderArray', unorderArray)
   // insertion(unorderArray)
   // console.log('insertion', unorderArray)
@@ -63,7 +67,9 @@ app.listen(3000, () => {
   // console.log('map array format', printSLL(sllMap(formSLL(2, 5), mutiply)))
   // sllForEach(formSLL(2, 5), printMutiply)
   // console.log('node3', node3)
-  // console.log('node1', node1)
+  // console.log('node', node)
+  console.log('found', found)
+
   // console.log('filter', (sllFilter(node1, isEven)))
 
   // const result = reverseList(node1)

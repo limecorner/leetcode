@@ -4,6 +4,11 @@ function Node (val, left, right) {
   this.right = (right === undefined ? null : right)
 }
 
+// while
+// t: O(h),
+// best/avg(balanced): O(log n),
+// worst(unbalanced => LL): O(n)
+// s: O(1)
 // function insert (root, val) {
 //   const temp = new Node(val)
 //   if (!root) return temp
@@ -47,6 +52,10 @@ function Node (val, left, right) {
 // }
 
 // recursive
+// t: O(h),
+// best/avg(balanced): O(log n),
+// worst(unbalanced => LL): O(n)
+// s: O(h)
 function insert (root, val) {
   if (!root) {
     // 沒有 this
@@ -76,12 +85,22 @@ function insert (root, val) {
 // }
 
 // recursive
+// function find (root, val) {
+//   if (!root) return null
+//   if (root.val === val) { return root }
+//   if (root.val > val) {
+//     return find(root.left, val)
+//   } else {
+//     return find(root.right, val)
+//   }
+// };
+
 function find (root, val) {
   if (!root) return null
   if (root.val === val) { return root }
   if (root.val > val) {
     return find(root.left, val)
-  } else {
+  } else if (root.val < val) {
     return find(root.right, val)
   }
 };
@@ -149,6 +168,8 @@ function DFSInOrder (root) {
   traverse(root)
   return visited
 }
+// InOrder
+// [3, 6, 8, 10, 15, 20]
 
 // DFSPreOrder
 // 一跑就放
@@ -163,9 +184,10 @@ insert(node, 15)
 insert(node, 3)
 insert(node, 8)
 insert(node, 20)
+const found = find(node, 15)
 
-const result = DFSPreOrder(node)
+// const result = DFSPreOrder(node)
 
 module.exports = {
-  node, result
+  node, found
 }
